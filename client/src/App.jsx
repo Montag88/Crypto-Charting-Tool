@@ -9,6 +9,7 @@ function App() {
     axios.get('http://localhost:3000/api/bpiData')
       .then(({ data }) => {
         console.log('DATA', data);
+        setBpiData(data);
       });
   };
 
