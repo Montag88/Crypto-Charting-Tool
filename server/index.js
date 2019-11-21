@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.static(path.resolve(__dirname, '../client/public/')));
 
 app.get('/api/bpiData', (req, res) => {
-  
+  console.log('hello');
 });
 
 app.listen(port, () => console.log(`Crypto Chart listening on port ${port}!`));

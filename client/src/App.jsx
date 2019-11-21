@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import BPIChart from './Chart';
 
 function App() {
-  // const [bpi]
+  const [bpiDataState, setBpiData] = useState({});
+
+  const getBpiData = () => {
+    axios.get('http://localhost:3000/api/bpiData')
+      .then(({ data }) => {
+        console.log('DATA', data);
+      });
+  };
+
+  useEffect(() => {
+    getBpiData();
+  }, []);
+
   return (
     <div>
       <h1>Cryptocurrency Charting Tool</h1>
-      <BPIChart />
+      <BPIChart bpiData={bpiDataState} />
       <p>Powered By CoinDesk</p>
     </div>
   );
