@@ -8,7 +8,7 @@ function App() {
   const getBpiData = () => {
     axios.get('http://localhost:3000/api/bpiData')
       .then(({ data }) => {
-        console.log('DATA', data);
+        // console.log('DATA', data);
         setBpiData(data);
       });
   };

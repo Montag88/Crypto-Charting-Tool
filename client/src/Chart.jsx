@@ -19,11 +19,6 @@ function BPIChart({ bpiData }) {
         scales: {
           xAxes: [{
             type: 'time',
-            time: {
-              displayFormats: {
-                quarter: 'MMM YYYY',
-              },
-            },
             distribution: 'series',
           }],
           yAxes: [{
@@ -41,7 +36,7 @@ function BPIChart({ bpiData }) {
   }, [bpiData]);
 
   return (
-    <canvas id="bpichart" ref={chartRef} width="400" height="400" />
+    <canvas id="bpichart" ref={chartRef} width="900" height="500" />
   );
 }
 export default BPIChart;
